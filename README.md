@@ -1,4 +1,4 @@
-# 🕵️‍♂️ Imposter Game (Fake It 'Til You Make It)
+# 🕵️‍♂️ Imposter Game
 
 > *Blend in, figure out the secret word, or spot the liar before time runs out.*
 
