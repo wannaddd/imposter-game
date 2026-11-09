@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../js/**/*.vue';
+@source '../js/**/*.js';
+
+html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F4F7FB;
+}
+
+/* Palette background gradient matching the provided palette */
+.palette-bg {
+    background: linear-gradient(135deg, #F4F7FB 0%, #E2ECF8 50%, #D8C3BC 100%);
+}
+
+/* Smooth Transitions */
+.screen-enter-active { transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1), transform 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+.screen-leave-active { transition: opacity 150ms ease, transform 150ms ease; }
+.screen-enter-from { opacity: 0; transform: translateY(12px) scale(0.99); }
+.screen-leave-to { opacity: 0; transform: translateY(-8px) scale(0.99); }
+
+.overlay-enter-active, .overlay-leave-active { transition: opacity 250ms ease; }
+.overlay-enter-from, .overlay-leave-to { opacity: 0; }
+.overlay-enter-active section, .overlay-leave-active section { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease; }
+.overlay-enter-from section, .overlay-leave-to section { transform: translateY(20px) scale(0.95); opacity: 0; }
+
+.game-interactive { transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease; }
+.game-interactive:not(:disabled):active { transform: scale(0.96); }
+.game-interactive:focus-visible { outline: 3px solid #617FA8; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-enter-active, .screen-leave-active, .overlay-enter-active, .overlay-leave-active,
+  .overlay-enter-active section, .overlay-leave-active section, .game-interactive { transition: none !important; }
+}
